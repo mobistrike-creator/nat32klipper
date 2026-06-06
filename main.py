@@ -332,8 +332,8 @@ function $(id){return document.getElementById(id)}
 async function api(path,opts){const r=await fetch(path,opts);return r.json()}
 function setBadge(t,c){const e=$('state');e.textContent=t;e.className='badge '+(c||'')}
 async function gcode(c){if(!c||!c.trim())return;await api('/api/gcode',{method:'POST',body:JSON.stringify({script:c})});poll()}
-function move(x,y,z){gcode('G91\\nG1 X'+x+' Y'+y+' Z'+z+' F3000\\nG90')}
-function extrude(m){gcode('G91\\nG1 E'+m+' F300\\nG90')}
+function move(x,y,z){gcode('G91\nG1 X'+x+' Y'+y+' Z'+z+' F3000\nG90')}
+function extrude(m){gcode('G91\nG1 E'+m+' F300\nG90')}
 async function sendGcode(){await gcode($('gcode-in').value)}
 async function estop(){await api('/api/estop',{method:'POST'});poll()}
 async function fwrestart(){await api('/api/fwrestart',{method:'POST'});poll()}
