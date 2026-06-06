@@ -1,0 +1,2 @@
+# NAT32KLIPPER for Render.com
+# No external dependencies needed — pure Python standard library

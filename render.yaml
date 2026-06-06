@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: nat32klipper
+    runtime: python
+    buildCommand: ""
+    startCommand: python main.py
+    healthCheckPath: /api/query
+    envVars:
+      - key: PORT
+        value: 10000
